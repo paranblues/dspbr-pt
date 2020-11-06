@@ -72,6 +72,15 @@ npm run render -- -- <scene_path> --ibl <hdr_path> --res <width> <height> --samp
 
 For now, this writes the output image to ./output.png
 
+## Electron GUI
+
+build Electron descktop GUI application
+
+```bash
+# Windows
+npm install && npm run build-all && npm run package:windows
+```
+
 ## Renderer API Usage
 
 ```javascript
