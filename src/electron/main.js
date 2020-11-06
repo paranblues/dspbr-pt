@@ -1,5 +1,5 @@
 /* @license
- * Copyright 2020  Dassault Systèmes - All Rights Reserved.
+ * Copyright 2020  Dassault Systï¿½mes - All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,9 +17,9 @@ const { app, BrowserWindow } = require('electron');
 const url = require('url');
 const path = require('path');
 const open = require('open');
-const serve = require('electron-serve');
+// const serve = require('electron-serve');
 
-const loadURL = serve({directory: 'dist'});
+// const loadURL = serve({directory: 'dist'});
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -30,10 +30,18 @@ function createWindow () {
   win = new BrowserWindow({width: 800, height: 600});
   win.maximize();
   
-  loadURL(win);
+  // loadURL(win);
+  
+  // win.loadURL(url.format({
+  //   pathname: path.join(__dirname, 'index.html'),
+  //   protocol: 'file:',
+  //   slashes: true
+  // }));
 
+  win.loadFile("dist/index.html");
+  
   // Open the DevTools.
-  // win.webContents.openDevTools();
+  win.webContents.openDevTools();
 
   win.webContents.on('new-window', function(event, url){
     event.preventDefault();
